@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Smart Gateway</title>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700" type="text/css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:700" type="text/css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <header class="container">
+         <div class="row margin-start">
+            <div class="col-xs-12">
+               <div class="row row-bg-color-red">
+                  <div class="col-xs-12 header-text text-right">
+                     Honeywell
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12 hr-padding">
+               <hr class="hr-style">
+            </div>
+            <div class="col-xs-12 subheader-text">
+               <b>Smart Gateway</b>
+            </div>
+         </div>
+      </header>
+      <section class="container">
+         <div class="row" align="left">
+            <div class="col-xs-12 title-text">
+               Create Rules
+            </div>
+         </div>
+         <form action="" method="post">
+            <div class="row">
+               <div class="col-xs-12 title-text">
+                  Rule Name
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-12">
+                  <input type="text"
+                         class="option-style"
+                         name="ruleName"
+                         placeholder="Rule Name"
+                         maxlength="40">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12 col-xs-12 title-text">
+                  Trigger Condition
+               </div>
+               <div class="col-sm-6 col-xs-12">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <label for="t_deviceType">Device Type</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <select class="option-style" name="t_deviceType">
+                           {% for deviceType in t_devices %}
+                              <option value="{{deviceType}}">{{deviceType}}</option>
+                           {% endfor %}
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-xs-12">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <label for="t_eventType">Event Type</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <select class="option-style" name="t_eventType">
+                           {% for eventType in t_events %}
+                              <option value="{{eventType}}">{{eventType}}</option>
+                           {% endfor %}
+                        </select>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-12 title-text">
+                  Response Condition
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-6 col-xs-12">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <label for="r_deviceType">Device Type</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <select class="option-style" name="r_deviceType">
+                           {% for deviceType in r_devices %}
+                              <option value="{{deviceType}}">{{deviceType}}</option>
+                           {% endfor %}
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-xs-12">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <label for="r_eventType">Event Type</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <select class="option-style" name="r_eventType">
+                           {% for eventType in r_events %}
+                              <option value="{{eventType}}">{{eventType}}</option>
+                           {% endfor %}
+                        </select>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <div class="row">
+               <div class="col-xs-12">
+                  <div class="btn btn-default btn-size form-body-text pull-left margin-form-submit">
+                     <input type="submit" value="Submit">
+                  </div>
+               </div>
+            </div>
+         </form>
